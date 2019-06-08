@@ -3,10 +3,13 @@ import {
     Form,
     Icon,
     Input,
-    Button
+    Button,
+    message
 } from 'antd'
 import './login.less'
 import logo from './images/logo.png'
+import {reqLogin} from '../../api'
+import memoryUtils from '../../utils/memoryUtils'
 
 const Item = Form.Item // 不能写在import之前
 
@@ -21,10 +24,24 @@ class Login extends Component {
         // 阻止事件的默认行为
         event.preventDefault()
         //对所有的表单字段都要校验
-        this.props.form.validateFields((err, values) => {
+        this.props.form.validateFields(async (err, values) => {
             if (!err) {
-                console.log('Received values of form:', values);
-            }else {
+                //console.log('Received values of form:', values);
+                const {username, password} = values
+                const response = await reqLogin(username, password)
+                // console.log("请求成功", response.data)
+                const result = response.data
+                if (result.status === 0) {
+                    message.success("succes login")
+                    //保存user
+                    const user = result.data
+                    memoryUtils.user = user //保存到内存中
+                    //跳转管理界面
+                    this.props.history.replace('/')
+                } else {
+                    message.error(result.msg)
+                }
+            } else {
                 console.log("fail")
             }
         });
