@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 import {Menu, Icon} from 'antd'
 
 import './index.less'
@@ -8,7 +8,7 @@ import menuList from '../../config/menuConfig'
 
 const SubMenu = Menu.SubMenu
 
-export default class Index extends Component {
+class LeftNav extends Component {
 
     getMenuNodes_map = (menuList) => {
         return menuList.map(item => {
@@ -39,6 +39,9 @@ export default class Index extends Component {
     }
 
     getMenuNodes = (menuList) => {
+
+        const path = this.props.location.pathname
+
         return menuList.reduce((pre, item) => {
             if (!item.children) {
                 pre.push((
@@ -50,6 +53,16 @@ export default class Index extends Component {
                     </Menu.Item>
                 ))
             } else {
+
+
+                // 查找一个与当前请求路径匹配的子Item
+                // const cItem = item.children.find(cItem => cItem.key === path)
+                const cItem = item.children.find(cItem => path.indexOf(cItem.key)===0)
+                // 如果存在, 说明当前item的子列表需要打开
+                if (cItem) {
+                    this.openKey = item.key
+                }
+
                 pre.push((
                     <SubMenu
                         key={item.key}
@@ -62,14 +75,23 @@ export default class Index extends Component {
                         {this.getMenuNodes(item.children)}
                     </SubMenu>
                 ))
-
             }
             return pre
         }, [])
 
     }
 
+    componentWillMount() {
+        this.menuNodes = this.getMenuNodes(menuList)
+    }
+
     render() {
+        // debugger
+        // const menuNodes=this.getMenuNodes(menuList)
+
+        const path = this.props.location.pathname
+        const openKey = this.openKey
+
         return (
             <div className="left-nav">
                 <Link to='/' className="left-nav-header">
@@ -77,12 +99,18 @@ export default class Index extends Component {
                     <h1>硅谷后台</h1>
                 </Link>
 
-                <Menu mode="inline" theme="dark">
+                <Menu mode="inline"
+                      theme="dark"
+                      selectedKeys={[path]}
+                      defaultOpenKeys={[openKey]}
+                >
                     {
-                        this.getMenuNodes(menuList)
+                        this.menuNodes
                     }
                 </Menu>
             </div>
         )
     }
 }
+
+export default withRouter(LeftNav)
