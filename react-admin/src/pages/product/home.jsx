@@ -5,10 +5,11 @@ import {
     Input,
     Icon,
     Button,
-    Table
+    Table,
+    message
 } from 'antd'
 import LinkButton from "../../components/link-button";
-import {reqProducts, reqSearchProducts} from '../../api'
+import {reqProducts, reqSearchProducts, reqUpdateStatus} from '../../api'
 import {PAGE_SIZE} from '../../utils/constants'
 
 
@@ -46,12 +47,14 @@ export default class ProductHome extends Component {
             {
                 width: 100,
                 title: '状态',
-                dataIndex: 'status',
-                render: (status) => {
+                render: (product) => {
+                    const {status, _id} = product
                     return (
                         <span>
-                            <Button type='primary'>下架</Button>
-                            <span>在售</span>
+                            <Button type='primary'
+                                    onClick={() => this.updateStatus(_id, status === 1 ? 2 : 1)}
+                            >{status === 1 ? '下架' : '上架'}</Button>
+                            <span>{status === 1 ? '在售' : '已下架'}</span>
                         </span>
                     )
                 }
@@ -75,6 +78,7 @@ export default class ProductHome extends Component {
 
     //获取指定页码的的列表显示
     getProducts = async (pageNum) => {
+        this.pageNum=pageNum
         this.setState({loading: true})
         const {searchName, searchType} = this.state
         let result
@@ -96,6 +100,27 @@ export default class ProductHome extends Component {
 
         }
 
+    }
+
+    // updateStatus = async (productId, status) => {
+    //     const result = await reqUpdateStatus(productId, status)
+    //     if (result.status === 0) {
+    //         messsage.success('更新商品成功')
+    //         this.getProducts(1)
+    //     } else {
+    //         messsage.error('fail')
+    //     }
+    // }
+
+    /*
+  更新指定商品的状态
+   */
+    updateStatus = async (productId, status) => {
+        const result = await reqUpdateStatus(productId, status)
+        if (result.status === 0) {
+            message.success('更新商品成功')
+            this.getProducts(this.pageNum)
+        }
     }
 
     componentWillMount() {
