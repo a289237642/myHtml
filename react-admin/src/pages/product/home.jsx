@@ -78,7 +78,7 @@ export default class ProductHome extends Component {
 
     //获取指定页码的的列表显示
     getProducts = async (pageNum) => {
-        this.pageNum=pageNum
+        this.pageNum = pageNum
         this.setState({loading: true})
         const {searchName, searchType} = this.state
         let result
@@ -150,7 +150,7 @@ export default class ProductHome extends Component {
         )
 
         const extra = (
-            <Button type='primary'>
+            <Button type='primary' onClick={() => this.props.history.push('/product/addupdate')}>
                 <Icon type='plus'/>添加商品
             </Button>
         )
