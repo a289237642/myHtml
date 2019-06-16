@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a96e7a08-f985-4600-a3f4-a21bff1aea1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/product/add-update.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/product/detail.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/product/home.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/product/product.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/product/product.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/product/home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/product/home.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react/api文档.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../react/gzhipin-client_final/node_modules/babel-plugin-transform-es2015-modules-umd/.npmignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../react/gzhipin-client_final/node_modules/babel-plugin-transform-es2015-modules-umd/README.md" beforeDir="false" />
@@ -27014,12 +27009,24 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/product/home.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-482">
-              <caret line="74" column="37" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="37" />
+            <state relative-caret-position="111">
+              <caret line="77" column="21" selection-start-line="77" selection-start-column="21" selection-end-line="77" selection-end-column="21" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
-                <element signature="e#1333#2475#0" />
-                <element signature="e#2502#2536#0" />
+                <element signature="e#523#1665#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/api/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="95" column="42" selection-start-line="95" selection-start-column="31" selection-end-line="95" selection-end-column="42" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#1535#1560#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -27093,9 +27100,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="882" />
-    <option name="y" value="12" />
-    <option name="width" value="1037" />
+    <option name="x" value="881" />
+    <option name="width" value="1038" />
     <option name="height" value="1039" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -27117,6 +27123,12 @@
               <item name="react-admin" type="b2602c69:ProjectViewProjectNode" />
               <item name="react-admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="react-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="react-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="react-admin" type="b2602c69:ProjectViewProjectNode" />
@@ -27216,17 +27228,19 @@
       <workItem from="1559964073876" duration="17120000" />
       <workItem from="1559987371225" duration="16835000" />
       <workItem from="1560049492616" duration="17185000" />
-      <workItem from="1560646548170" duration="21383000" />
+      <workItem from="1560646548170" duration="21764000" />
+      <workItem from="1560675292780" duration="1110000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86185000" />
+    <option name="totallyTimeSpent" value="87676000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="706" y="10" width="829" height="831" extended-state="0" />
+    <frame x="705" y="0" width="830" height="831" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.40985733" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.23605707" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Storybook" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -27539,19 +27553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="81" column="24" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="24" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#1535#1560#0" expanded="true" />
-            <element signature="e#4035#4055#0" />
-            <element signature="e#4658#4991#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/category/category.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -27569,14 +27570,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="95" column="42" selection-start-line="95" selection-start-column="31" selection-end-line="95" selection-end-column="42" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#1535#1560#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/product/home.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-482">
-          <caret line="74" column="37" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="37" />
+        <state relative-caret-position="111">
+          <caret line="77" column="21" selection-start-line="77" selection-start-column="21" selection-end-line="77" selection-end-column="21" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#1333#2475#0" />
-            <element signature="e#2502#2536#0" />
+            <element signature="e#523#1665#0" />
           </folding>
         </state>
       </provider>
