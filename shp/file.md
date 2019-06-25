@@ -6,14 +6,13 @@
 >> https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex=1&pageSize=20&type_uuid=33333333333333333333333333333333  互联网列表页
 
 ##详情页
->> https://www.weseepro.com/api/v1/message/stream/home/cee2b7d8553a45d9bcbd6cfde1985777?pageNumber=1&pageSize=10     区块链详情页
+>>    区块链详情页
 >> https://www.weseepro.com/api/v1/message/stream/home/3ea9cc65632c4dc7bf8589d77adb9b2b?pageNumber=1&pageSize=10     创投详情页
 >> https://www.weseepro.com/api/v1/message/stream/home/a0d270bd7d824334be20bda38f6f6c97?pageNumber=1&pageSize=10     互联网详情页
 >> https://www.weseepro.com/api/v1/message/stream/home/b401ce557271458493d6e36f7f668607?pageNumber=1&pageSize=10     财经详情页
 
 
-
-  `代码内容`
+  `代码内容--request`
 
 ```flow
 import requests

@@ -10,7 +10,7 @@ from shp.items import ShpItem, ShpUserItem
 class SpInfoSpider(scrapy.Spider):
     name = 'sp_info'
     allowed_domains = ['weseepro.com']
-    url = 'https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex={}&pageSize=20&type_uuid=289e724e0cf84800876588e2e4e3bf96'
+    url = 'https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex={}&pageSize=20&type_uuid=33333333333333333333333333333333'
     page = 1
     start_urls = [url.format(page)]
 
@@ -71,24 +71,29 @@ class SpInfoSpider(scrapy.Spider):
 
     def parse_detail(self, response):
         uu = self.handlesUrl(response.url)
-        python_dict = json.loads(response.text)
-        user = ShpUserItem()
-        userInfo = python_dict['data']['activity']
-        if userInfo == {}:
-            return
-        user['name'] = userInfo['name']
-        user['head_image_url'] = userInfo['head_image_url']
-        user['message_count'] = userInfo['message_count']
-        user['description'] = userInfo['description']
-        user['counts'] = userInfo['counts']
-        user['introduction'] = userInfo['introduction']
-        user['industry'] = userInfo['industry']
-        user['activity_uuid'] = userInfo['activity_uuid']
-        # print(user)
-        yield user
-        # if len(python_dict['data']['messages']) == 0:
-        #     return
 
+        python_dict = json.loads(response.text)
+        myFriend = python_dict['data']['messages']
+        if len(myFriend) == 0:
+            return
+        else:
+            for i in myFriend:
+                item = ShpItem()
+                if i['message'] is None:
+                    return
+                else:
+                    item['link_type'] = i['message']['message_text']['link_type']
+                    item['comment_count'] = i['message']['message_text']['comment_count']
+                    item['source'] = i['message']['message_text']['source']
+                    item['add_time'] = i['message']['message_text']['add_time']
+                    item['content'] = i['message']['message_text']['content'].replace('\n', "")
+                    item['pic'] = i['message']['link']['pic']
+                    item['url'] = i['message']['link']['url']
+                    item['ftitle'] = i['message']['link']['title']
+                    item['activity_uuid'] = uu
+
+                # print(item)
+                yield item
         self.page += 1
         url = self.detail.format(uu, self.page)
         yield scrapy.Request(url, callback=self.parse_detail)

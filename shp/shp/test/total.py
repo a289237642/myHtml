@@ -16,6 +16,20 @@ class SpInfoSpider(scrapy.Spider):
 
     detail = "https://www.weseepro.com/api/v1/message/stream/home/{}?pageNumber={}&pageSize=10"
 
+    def parse(self, response):
+        python_dict = json.loads(response.text)
+        myList = python_dict['data']['activities']
+        # 爬虫结束条件
+        if myList is None:
+            return
+        for mlist in myList:
+            new_url = self.detail.format(mlist['activity_uuid'], self.page)
+            yield scrapy.Request(new_url, callback=self.parse_detail)
+
+        self.page += 1
+        url = self.url.format(self.page)
+        yield scrapy.Request(url, callback=self.parse)
+
     def handleJs(self, url):
         driver = webdriver.Chrome()
         driver.get(url)
@@ -50,45 +64,30 @@ class SpInfoSpider(scrapy.Spider):
             dicts['tUrl'] = ""
         return dicts
 
-        # 寻找activity_uuid
-
-    def handlesUrl(self, url):
-        return url.split("/")[-1].split("?")[0]
-
-    def parse(self, response):
-        python_dict = json.loads(response.text)
-        myList = python_dict['data']['activities']
-        # 爬虫结束条件
-        if myList is None:
-            return
-        for mlist in myList:
-            new_url = self.detail.format(mlist['activity_uuid'], self.page)
-            yield scrapy.Request(new_url, callback=self.parse_detail, )
-
-        self.page += 1
-        url = self.url.format(self.page)
-        yield scrapy.Request(url, callback=self.parse)
-
     def parse_detail(self, response):
-        uu = self.handlesUrl(response.url)
         python_dict = json.loads(response.text)
-        user = ShpUserItem()
-        userInfo = python_dict['data']['activity']
-        if userInfo == {}:
+        myFriend = python_dict['data']['messages']
+        if len(myFriend) == 0:
             return
-        user['name'] = userInfo['name']
-        user['head_image_url'] = userInfo['head_image_url']
-        user['message_count'] = userInfo['message_count']
-        user['description'] = userInfo['description']
-        user['counts'] = userInfo['counts']
-        user['introduction'] = userInfo['introduction']
-        user['industry'] = userInfo['industry']
-        user['activity_uuid'] = userInfo['activity_uuid']
-        # print(user)
-        yield user
-        # if len(python_dict['data']['messages']) == 0:
-        #     return
+        else:
+            uu = python_dict['data']['messages'][0]['message']['account']['activity_uuid']
+            for i in myFriend:
+                item = ShpItem()
+                if i['message'] is None:
+                    return
+                else:
+                    item['url'] = i['message']['link']['url']
+                    if "mp.weixin.qq.com" in i['message']['link']['url']:
+                        dicts = self.handleJs(i['message']['link']['url'])
+                        item['title'] = dicts['title']
+                        item['author'] = dicts['author']
+                        item['atime'] = dicts['atime']
+                        item['content'] = dicts['content']
+                        item['tUrl'] = dicts['tUrl']
+                        item['activity_uuid'] = uu
 
-        self.page += 1
-        url = self.detail.format(uu, self.page)
-        yield scrapy.Request(url, callback=self.parse_detail)
+                # print(item)
+                yield item
+            self.page += 1
+            url = self.detail.format(uu, self.page)
+            yield scrapy.Request(url, callback=self.parse_detail)
