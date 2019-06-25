@@ -33,3 +33,6 @@ ss = json.loads(response)
 print(ss['data'])
 
 &```
+
+# //img[@data-ratio][not(@data-copyright)]//@src
+
