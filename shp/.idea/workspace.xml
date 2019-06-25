@@ -4,12 +4,7 @@
     <list default="true" id="0af8afac-0607-4091-8255-d2231c606759" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../react-admin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../react-admin/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-admin/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../react-admin/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shp/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/shp/items.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shp/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/shp/pipelines.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shp/spiders/sp_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/shp/spiders/sp_info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shp/test/sp_friend.py" beforeDir="false" afterPath="$PROJECT_DIR$/shp/test/sp_friend.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shp/test/sp_info_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/shp/test/sp_info_user.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +16,7 @@
     <SUITE FILE_PATH="coverage/shp$1.coverage" NAME="1 Coverage Results" MODIFIED="1560913739805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/shp$2__2_.coverage" NAME="2 (2) Coverage Results" MODIFIED="1561366950706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/shp/test" />
     <SUITE FILE_PATH="coverage/shp$2.coverage" NAME="2 Coverage Results" MODIFIED="1560914059229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/shp$main.coverage" NAME="main Coverage Results" MODIFIED="1561453597125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/shp/spiders" />
+    <SUITE FILE_PATH="coverage/shp$main.coverage" NAME="main Coverage Results" MODIFIED="1561459562133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/shp/spiders" />
     <SUITE FILE_PATH="coverage/shp$2__1_.coverage" NAME="2 (1) Coverage Results" MODIFIED="1561018740848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/shp" />
     <SUITE FILE_PATH="coverage/shp$sp_info.coverage" NAME="sp_info Coverage Results" MODIFIED="1561097284963" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/shp/spiders" />
     <SUITE FILE_PATH="coverage/shp$1__1_.coverage" NAME="1 (1) Coverage Results" MODIFIED="1561016056204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/shp" />
@@ -29,48 +24,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/file.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="36">
-                <caret line="2" column="129" selection-start-line="2" selection-start-column="97" selection-end-line="2" selection-end-column="129" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shp/spiders/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shp/pipelines.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-486">
-              <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-              <folding>
-                <element signature="e#193#207#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/shp/spiders/sp_info.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+            <state relative-caret-position="198">
+              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
                 <element signature="e#569#2016#0" />
-                <element signature="e#2137#2587#0" />
               </folding>
             </state>
           </provider>
@@ -113,11 +74,12 @@
         <option value="$PROJECT_DIR$/shp/test/sp_friend.py" />
         <option value="$PROJECT_DIR$/shp/items.py" />
         <option value="$PROJECT_DIR$/shp/pipelines.py" />
+        <option value="$PROJECT_DIR$/shp/test/sp_comment.py" />
         <option value="$PROJECT_DIR$/shp/spiders/sp_info.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="1938" />
@@ -323,24 +285,23 @@
       <workItem from="1561082688417" duration="20122000" />
       <workItem from="1561159392940" duration="48000" />
       <workItem from="1561345112522" duration="16154000" />
-      <workItem from="1561428519577" duration="14123000" />
+      <workItem from="1561428519577" duration="20509000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85983000" />
+    <option name="totallyTimeSpent" value="92369000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.21648793" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21648793" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Storybook" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.49560118" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44428152" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -474,28 +435,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shp/test/sp_friend.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-            <element signature="e#569#2016#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shp/spiders/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shp/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="74" column="9" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -509,24 +452,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/shp/test/sp_comment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="79" column="30" selection-start-line="79" selection-start-column="30" selection-end-line="79" selection-end-column="30" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+            <element signature="e#585#2032#0" />
+            <element signature="e#2153#2603#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shp/test/sp_friend.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="658">
+          <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+            <element signature="e#569#2016#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/file.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="36">
-            <caret line="2" column="129" selection-start-line="2" selection-start-column="97" selection-end-line="2" selection-end-column="129" />
+          <first_editor relative-caret-position="54">
+            <caret line="3" column="129" selection-start-line="3" selection-start-column="97" selection-end-line="3" selection-end-column="129" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/shp/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1056">
+          <caret line="74" column="9" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/shp/spiders/sp_info.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+        <state relative-caret-position="198">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
           <folding>
             <element signature="e#24#37#0" expanded="true" />
             <element signature="e#569#2016#0" />
-            <element signature="e#2137#2587#0" />
           </folding>
         </state>
       </provider>

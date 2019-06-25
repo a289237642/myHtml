@@ -10,7 +10,7 @@ from shp.items import ShpItem, ShpUserItem
 class SpInfoSpider(scrapy.Spider):
     name = 'sp_info'
     allowed_domains = ['weseepro.com']
-    url = 'https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex={}&pageSize=20&type_uuid=33333333333333333333333333333333'
+    url = 'https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex={}&pageSize=20&type_uuid=22222222222222222222222222222222'
     page = 1
     start_urls = [url.format(page)]
 
@@ -83,44 +83,46 @@ class SpInfoSpider(scrapy.Spider):
                 if i['message'] is None:
                     return
                 else:
-                    item['link_type'] = i['message']['message_text']['link_type']
-                    # item['comment_count'] = i['message']['message_text']['comment_count']
-                    item['source'] = i['message']['message_text']['source']
                     item['add_time'] = i['message']['message_text']['add_time']
                     item['content'] = i['message']['message_text']['content'].replace('\n', "")
-                    # item['pic'] = i['message']['link']['pic']
-                    # item['url'] = i['message']['link']['url']
-                    # item['ftitle'] = i['message']['link']['title']
                     item['activity_uuid'] = uu
+
+                    if i['message']['message_text']['add_time'] is null:
+                        item['add_time'] = ""
+                    else:
+                        item['add_time'] = i['message']['message_text']['add_time']
+                    if 'source' not in i['message']['message_text'].keys():
+                        item['source'] = ""
+                    else:
+                        item['source'] = i['message']['message_text']['source']
+
+                    if 'link_type' not in i['message']['message_text'].keys():
+                        item['link_type'] = ""
+                    else:
+                        item['link_type'] = i['message']['message_text']['link_type']
 
                     if 'comment_count' not in i['message']['message_text'].keys():
                         item['comment_count'] = ""
                     else:
                         item['comment_count'] = i['message']['message_text']['comment_count']
 
-                    # if 'link' in i['message'].keys():
-                    if i['message']['link'] is not null:
-                        print("====>>>", list(i['message']['link'].keys()))
-                        picList=list(i['message']['link'].keys())
+                    if i['message']['link'] is not null or 'link' in i['message'].keys():
+                        picList = list(i.keys())
                         for j in picList:
-                            if 'pic'!=j:
+                            if 'pic' != j or 'link' not in i.keys():
                                 item['pic'] = ""
                             else:
                                 item['pic'] = i['message']['link']['pic']
 
-                        if 'pic' not in list(i['message']['link'].keys()):
-                            item['pic'] = ""
-                        else:
-                            item['pic'] = i['message']['link']['pic']
-                        if 'title' not in i['message']['link'].keys():
+                        if i['message']['link'] is null or 'title' not in i['message']['link'].keys():
                             item['ftitle'] = ""
-                        else:
+                        elif i['message']['link'] is not null or 'title' in i['message']['link'].keys():
                             item['ftitle'] = i['message']['link']['title']
                         if 'url' not in i['message']['link'].keys():
                             item['url'] = ""
                         else:
                             item['url'] = i['message']['link']['url']
-                    else:
+                    elif i['message']['link'] is null or 'link' not in i['message'].keys():
                         item['pic'] = ""
                         item['ftitle'] = ""
                         item['url'] = ""
@@ -130,3 +132,6 @@ class SpInfoSpider(scrapy.Spider):
         self.page += 1
         url = self.detail.format(uu, self.page)
         yield scrapy.Request(url, callback=self.parse_detail)
+
+
+# //img[@data-ratio][not(@data-copyright)]//@src
