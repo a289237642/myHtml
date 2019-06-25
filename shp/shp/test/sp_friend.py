@@ -74,6 +74,7 @@ class SpInfoSpider(scrapy.Spider):
 
         python_dict = json.loads(response.text)
         myFriend = python_dict['data']['messages']
+        null = 0  # myself
         if len(myFriend) == 0:
             return
         else:
@@ -83,17 +84,49 @@ class SpInfoSpider(scrapy.Spider):
                     return
                 else:
                     item['link_type'] = i['message']['message_text']['link_type']
-                    item['comment_count'] = i['message']['message_text']['comment_count']
+                    # item['comment_count'] = i['message']['message_text']['comment_count']
                     item['source'] = i['message']['message_text']['source']
                     item['add_time'] = i['message']['message_text']['add_time']
                     item['content'] = i['message']['message_text']['content'].replace('\n', "")
-                    item['pic'] = i['message']['link']['pic']
-                    item['url'] = i['message']['link']['url']
-                    item['ftitle'] = i['message']['link']['title']
+                    # item['pic'] = i['message']['link']['pic']
+                    # item['url'] = i['message']['link']['url']
+                    # item['ftitle'] = i['message']['link']['title']
                     item['activity_uuid'] = uu
 
-                # print(item)
-                yield item
+                    if 'comment_count' not in i['message']['message_text'].keys():
+                        item['comment_count'] = ""
+                    else:
+                        item['comment_count'] = i['message']['message_text']['comment_count']
+
+                    # if 'link' in i['message'].keys():
+                    if i['message']['link'] is not null:
+                        print("====>>>", list(i['message']['link'].keys()))
+                        picList=list(i['message']['link'].keys())
+                        for j in picList:
+                            if 'pic'!=j:
+                                item['pic'] = ""
+                            else:
+                                item['pic'] = i['message']['link']['pic']
+
+                        if 'pic' not in list(i['message']['link'].keys()):
+                            item['pic'] = ""
+                        else:
+                            item['pic'] = i['message']['link']['pic']
+                        if 'title' not in i['message']['link'].keys():
+                            item['ftitle'] = ""
+                        else:
+                            item['ftitle'] = i['message']['link']['title']
+                        if 'url' not in i['message']['link'].keys():
+                            item['url'] = ""
+                        else:
+                            item['url'] = i['message']['link']['url']
+                    else:
+                        item['pic'] = ""
+                        item['ftitle'] = ""
+                        item['url'] = ""
+
+                print(item)
+                # yield item
         self.page += 1
         url = self.detail.format(uu, self.page)
         yield scrapy.Request(url, callback=self.parse_detail)

@@ -60,3 +60,18 @@ class ShpUserItem(scrapy.Item):
 
     # activity_uuid
     activity_uuid = scrapy.Field()
+
+
+class ShpCommentItem(scrapy.Item):
+    # 评论人的名字
+    name = scrapy.Field()
+    # 评论人的头像头像
+    head_image_url = scrapy.Field()
+    # 评论的内容
+    fcontent = scrapy.Field()
+    # 评论的插图
+    comment_img = scrapy.Field()
+    # 评论时间
+    ctime = scrapy.Field()
+    # 评论的内容
+    content = scrapy.Field()

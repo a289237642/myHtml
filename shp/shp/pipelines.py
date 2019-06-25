@@ -6,6 +6,7 @@
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 import pymysql
 from scrapy.conf import settings
+from datetime import datetime
 
 
 class ShpPipeline(object):
@@ -23,10 +24,10 @@ class ShpPipeline(object):
 
         try:
             self.cursor.execute(
-                "insert into user_base(name,head_image_url,description,message_count,introduction,industry,activity_uuid,counts)"
-                " values(%s,%s,%s,%s,%s,%s,%s,%s)",
-                [item['name'], item['head_image_url'], item['description'], item['message_count'],
-                 item['introduction'], item['industry'], item['activity_uuid'],item['counts']])
+                "insert into user_comment(name,head_image_url,fcontent,content,comment_img,ctime)"
+                " values(%s,%s,%s,%s,%s,%s)",
+                [item['name'], item['head_image_url'], item['fcontent'], item['content'],
+                 item['comment_img'], datetime.now()])
             self.connect.commit()
         except Exception as error:
             print(error)
@@ -55,4 +56,6 @@ self.cursor.execute(
                 "insert into aritcle(title,author,atime,tUrl,content,activity_uuid)"
                 " values(%s,%s,%s,%s,%s,%s)",
                 [item['title'], item['author'], item['atime'], item['tUrl'], item['content'], item['activity_uuid']])
+                
+
 """

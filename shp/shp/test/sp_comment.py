@@ -4,13 +4,13 @@ import json
 from selenium import webdriver
 from lxml import etree
 
-from shp.items import ShpItem, ShpUserItem
+from shp.items import ShpItem, ShpUserItem, ShpCommentItem
 
 
 class SpInfoSpider(scrapy.Spider):
     name = 'sp_info'
     allowed_domains = ['weseepro.com']
-    url = 'https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex={}&pageSize=20&type_uuid=33333333333333333333333333333333'
+    url = 'https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex={}&pageSize=20&type_uuid=289e724e0cf84800876588e2e4e3bf96'
     page = 1
     start_urls = [url.format(page)]
 
@@ -74,59 +74,24 @@ class SpInfoSpider(scrapy.Spider):
 
         python_dict = json.loads(response.text)
         myFriend = python_dict['data']['messages']
-        null = 0  # myself
         if len(myFriend) == 0:
             return
         else:
             for i in myFriend:
-                item = ShpItem()
                 if i['message'] is None:
                     return
                 else:
-                    item['link_type'] = i['message']['message_text']['link_type']
-                    # item['comment_count'] = i['message']['message_text']['comment_count']
-                    item['source'] = i['message']['message_text']['source']
-                    item['add_time'] = i['message']['message_text']['add_time']
-                    item['content'] = i['message']['message_text']['content'].replace('\n', "")
-                    # item['pic'] = i['message']['link']['pic']
-                    # item['url'] = i['message']['link']['url']
-                    # item['ftitle'] = i['message']['link']['title']
-                    item['activity_uuid'] = uu
-
-                    if 'comment_count' not in i['message']['message_text'].keys():
-                        item['comment_count'] = ""
-                    else:
-                        item['comment_count'] = i['message']['message_text']['comment_count']
-
-                    # if 'link' in i['message'].keys():
-                    if i['message']['link'] is not null:
-                        print("====>>>", list(i['message']['link'].keys()))
-                        picList=list(i['message']['link'].keys())
-                        for j in picList:
-                            if 'pic'!=j:
-                                item['pic'] = ""
-                            else:
-                                item['pic'] = i['message']['link']['pic']
-
-                        if 'pic' not in list(i['message']['link'].keys()):
-                            item['pic'] = ""
-                        else:
-                            item['pic'] = i['message']['link']['pic']
-                        if 'title' not in i['message']['link'].keys():
-                            item['ftitle'] = ""
-                        else:
-                            item['ftitle'] = i['message']['link']['title']
-                        if 'url' not in i['message']['link'].keys():
-                            item['url'] = ""
-                        else:
-                            item['url'] = i['message']['link']['url']
-                    else:
-                        item['pic'] = ""
-                        item['ftitle'] = ""
-                        item['url'] = ""
-
-                print(item)
-                # yield item
+                    if len(i['follow_messages']) != 0:
+                        comments = i['follow_messages']
+                        for comment in comments:
+                            item = ShpCommentItem()
+                            item['fcontent'] = i['message']['message_text']['content'].replace('\n', "")
+                            item['name'] = comment['account']['name']
+                            item['head_image_url'] = comment['account']['head_image_url']
+                            item['content'] = comment['message_text']['content']
+                            item['comment_img'] = comment['message_text']['comment_img']
+                            # print(item)
+                            yield item
         self.page += 1
         url = self.detail.format(uu, self.page)
         yield scrapy.Request(url, callback=self.parse_detail)
