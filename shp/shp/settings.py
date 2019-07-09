@@ -66,7 +66,7 @@ DEFAULT_REQUEST_HEADERS = {
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'shp.pipelines.ShpPipeline': 300,
+    'shp.pipelines.ShpPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -93,9 +93,7 @@ ITEM_PIPELINES = {
 # mysql 连接信息
 MYSQL_HOST = "rm-uf6gw23j409s5ui7qmoo.mysql.rds.aliyuncs.com"
 # MYSQL_DBNAME = "sp_spider"
-MYSQL_DBNAME = "h5pro"
-
+MYSQL_DBNAME = "zj_live"
 MYSQL_USER = "maxpr_mysql"
 MYSQL_PASSWORD = "COFdjwD*$*m8bd!HtMLP4+Az0eE9m"
 MYSQL_PORT = 3306
-

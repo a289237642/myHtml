@@ -3,7 +3,7 @@
 >> https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex=1&pageSize=20&type_uuid=289e724e0cf84800876588e2e4e3bf96   区块链列表页
 >> https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex=1&pageSize=20&type_uuid=22222222222222222222222222222222   财经列表页
 >> https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex=1&pageSize=20&type_uuid=88888888888888888888888888888888   创投列表页
->> https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex=1&pageSize=20&type_uuid=33333333333333333333333333333333  互联网列表页
+>> https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex=1&pageSize=20&type_uuid=33333333333333333333333333333333   互联网列表页
 
 ##详情页
 >>    区块链详情页

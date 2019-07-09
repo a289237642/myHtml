@@ -1,3 +1,4 @@
 from scrapy import cmdline
 
-cmdline.execute("scrapy crawl sp_info".split())
+if __name__ == "__main__":
+    cmdline.execute("scrapy crawl sp_info".split())

@@ -16,42 +16,6 @@ class SpInfoSpider(scrapy.Spider):
 
     detail = "https://www.weseepro.com/api/v1/message/stream/home/{}?pageNumber={}&pageSize=10"
 
-    def handleJs(self, url):
-        driver = webdriver.Chrome()
-        driver.get(url)
-        htmls = etree.HTML(driver.page_source)
-
-        dicts = {}
-        if len(htmls.xpath('//h2[@id="activity-name"]/text()')) > 0:
-            dicts['title'] = htmls.xpath(
-                '//h2[@id="activity-name"]/text()')[0].strip()
-        else:
-            dicts['title'] = ""
-        if len(htmls.xpath('//*[@id="publish_time"]/text()')) > 0:
-            dicts['atime'] = htmls.xpath('//*[@id="publish_time"]/text()')[0]
-        else:
-            dicts['atime'] = ""
-        if len(htmls.xpath('//span[@id="js_author_name"]/text()')) > 0:
-            dicts['author'] = htmls.xpath(
-                '//span[@id="js_author_name"]/text()')[0]
-        else:
-            dicts['author'] = ""
-        # content=''.join(htmls.xpath('//div[@id="js_content"]/p/span/text()')
-        if len(driver.find_element_by_xpath(
-                '//div[@id="js_content"]').get_attribute('outerHTML')) > 0:
-            dicts['content'] = driver.find_element_by_xpath(
-                '//div[@id="js_content"]').get_attribute('outerHTML').replace('\n', '').replace('data-src', 'src')
-        else:
-            dicts['content'] = ""
-        if len(htmls.xpath('//*[@id="js_content"]/p[5]/img/@data-src')) > 0:
-            dicts['tUrl'] = htmls.xpath(
-                '//*[@id="js_content"]/p[5]/img/@data-src')[0]
-        else:
-            dicts['tUrl'] = ""
-        return dicts
-
-        # 寻找activity_uuid
-
     def handlesUrl(self, url):
         return url.split("/")[-1].split("?")[0]
 

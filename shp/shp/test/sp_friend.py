@@ -1,8 +1,5 @@
-# -*- coding: utf-8 -*-
 import scrapy
 import json
-from selenium import webdriver
-from lxml import etree
 
 from shp.items import ShpItem, ShpUserItem
 
@@ -10,47 +7,11 @@ from shp.items import ShpItem, ShpUserItem
 class SpInfoSpider(scrapy.Spider):
     name = 'sp_info'
     allowed_domains = ['weseepro.com']
-    url = 'https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex={}&pageSize=20&type_uuid=33333333333333333333333333333333'
+    url = 'https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex={}&pageSize=20&type_uuid=22222222222222222222222222222222'
     page = 1
     start_urls = [url.format(page)]
 
     detail = "https://www.weseepro.com/api/v1/message/stream/home/{}?pageNumber={}&pageSize=10"
-
-    def handleJs(self, url):
-        driver = webdriver.Chrome()
-        driver.get(url)
-        htmls = etree.HTML(driver.page_source)
-
-        dicts = {}
-        if len(htmls.xpath('//h2[@id="activity-name"]/text()')) > 0:
-            dicts['title'] = htmls.xpath(
-                '//h2[@id="activity-name"]/text()')[0].strip()
-        else:
-            dicts['title'] = ""
-        if len(htmls.xpath('//*[@id="publish_time"]/text()')) > 0:
-            dicts['atime'] = htmls.xpath('//*[@id="publish_time"]/text()')[0]
-        else:
-            dicts['atime'] = ""
-        if len(htmls.xpath('//span[@id="js_author_name"]/text()')) > 0:
-            dicts['author'] = htmls.xpath(
-                '//span[@id="js_author_name"]/text()')[0]
-        else:
-            dicts['author'] = ""
-        # content=''.join(htmls.xpath('//div[@id="js_content"]/p/span/text()')
-        if len(driver.find_element_by_xpath(
-                '//div[@id="js_content"]').get_attribute('outerHTML')) > 0:
-            dicts['content'] = driver.find_element_by_xpath(
-                '//div[@id="js_content"]').get_attribute('outerHTML').replace('\n', '').replace('data-src', 'src')
-        else:
-            dicts['content'] = ""
-        if len(htmls.xpath('//*[@id="js_content"]/p[5]/img/@data-src')) > 0:
-            dicts['tUrl'] = htmls.xpath(
-                '//*[@id="js_content"]/p[5]/img/@data-src')[0]
-        else:
-            dicts['tUrl'] = ""
-        return dicts
-
-        # 寻找activity_uuid
 
     def handlesUrl(self, url):
         return url.split("/")[-1].split("?")[0]
@@ -63,7 +24,7 @@ class SpInfoSpider(scrapy.Spider):
             return
         for mlist in myList:
             new_url = self.detail.format(mlist['activity_uuid'], self.page)
-            yield scrapy.Request(new_url, callback=self.parse_detail, )
+            yield scrapy.Request(new_url, callback=self.parse_detail)
 
         self.page += 1
         url = self.url.format(self.page)
@@ -74,59 +35,89 @@ class SpInfoSpider(scrapy.Spider):
 
         python_dict = json.loads(response.text)
         myFriend = python_dict['data']['messages']
-        null = 0  # myself
-        if len(myFriend) == 0:
-            return
-        else:
-            for i in myFriend:
+        if len(myFriend) > 0:
+            for mfriend in myFriend:
                 item = ShpItem()
-                if i['message'] is None:
-                    return
+                # 添加时间
+                if mfriend['message']['message_text']['add_time'] is not None:
+                    item['add_time'] = mfriend['message']['message_text']['add_time']
                 else:
-                    item['link_type'] = i['message']['message_text']['link_type']
-                    # item['comment_count'] = i['message']['message_text']['comment_count']
-                    item['source'] = i['message']['message_text']['source']
-                    item['add_time'] = i['message']['message_text']['add_time']
-                    item['content'] = i['message']['message_text']['content'].replace('\n', "")
-                    # item['pic'] = i['message']['link']['pic']
-                    # item['url'] = i['message']['link']['url']
-                    # item['ftitle'] = i['message']['link']['title']
-                    item['activity_uuid'] = uu
+                    item['add_time'] = "2019-06-01 00:00:00"
 
-                    if 'comment_count' not in i['message']['message_text'].keys():
-                        item['comment_count'] = ""
-                    else:
-                        item['comment_count'] = i['message']['message_text']['comment_count']
+                # 内容
+                if 'content' in mfriend['message']['message_text'].keys():
+                    item['content'] = mfriend['message']['message_text']['content'].replace('\n', "").replace(
+                        "\u200b\u200b\u200b", "")
+                else:
+                    item['content'] = ""
 
-                    # if 'link' in i['message'].keys():
-                    if i['message']['link'] is not null:
-                        print("====>>>", list(i['message']['link'].keys()))
-                        picList=list(i['message']['link'].keys())
-                        for j in picList:
-                            if 'pic'!=j:
-                                item['pic'] = ""
-                            else:
-                                item['pic'] = i['message']['link']['pic']
+                # 人物activity_uuid
+                item['activity_uuid'] = uu
 
-                        if 'pic' not in list(i['message']['link'].keys()):
-                            item['pic'] = ""
-                        else:
-                            item['pic'] = i['message']['link']['pic']
-                        if 'title' not in i['message']['link'].keys():
-                            item['ftitle'] = ""
-                        else:
-                            item['ftitle'] = i['message']['link']['title']
-                        if 'url' not in i['message']['link'].keys():
-                            item['url'] = ""
-                        else:
-                            item['url'] = i['message']['link']['url']
-                    else:
+                # 信息的message_uuid
+                item['message_uuid'] = mfriend['message_uuid']
+
+                # 点赞数
+                if 'source' in mfriend['message']['message_text']:
+                    item['thumb_count'] = mfriend['message']['message_text']['source']
+                else:
+                    item['thumb_count'] = 0
+
+                # 转发数
+                if 'link_type' in mfriend['message']['message_text'].keys():
+                    item['forward_count'] = mfriend['message']['message_text']['link_type']
+                else:
+                    item['forward_count'] = 0
+
+                # 评论数
+                if 'comment_count' in mfriend['message']['message_text'].keys():
+                    item['comment_count'] = mfriend['message']['message_text']['comment_count']
+                else:
+                    item['comment_count'] = 0
+
+                # 分享的链接的封面图
+                if mfriend['message']['link'] is None:
+                    item['pic'] = ""
+                else:
+                    if 'link' not in mfriend['message'].keys():
                         item['pic'] = ""
-                        item['ftitle'] = ""
-                        item['url'] = ""
+                    elif 'pic' not in mfriend['message']['link'].keys():
+                        item['pic'] = ""
+                    else:
+                        item['pic'] = mfriend['message']['link']['pic']
 
-                print(item)
-                # yield item
+                # 标题
+                if mfriend['message']['link'] is None:
+                    item['ftitle'] = ""
+                elif 'link' not in mfriend['message'].keys():
+                    item['ftitle'] = ""
+                elif 'title' not in mfriend['message']['link'].keys():
+                    item['ftitle'] = ""
+                else:
+                    item['ftitle'] = mfriend['message']['link']['title']
+
+                # 分享的链接或者图片的地址
+                if mfriend['message']['link'] is None:
+                    item['url'] = ""
+                elif 'link' not in mfriend['message'].keys():
+                    item['url'] = ""
+                elif 'url' not in mfriend['message']['link'].keys():
+                    item['url'] = ""
+                else:
+                    url = mfriend['message']['link']['url']
+                    if ".jpg" in url or ".png" in url:
+                        item['img_url'] = url
+                        item['link_url'] = ""
+                    else:
+                        item['img_url'] = ""
+                        item['link_url'] = url
+                    item['url'] = url
+
+                # print(item)
+                yield item
+        else:
+            return
+
         self.page += 1
         url = self.detail.format(uu, self.page)
         yield scrapy.Request(url, callback=self.parse_detail)

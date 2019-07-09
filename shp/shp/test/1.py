@@ -114,3 +114,5 @@ class SpInfoSpider(scrapy.Spider):
         #     self.page += 1
         #     url = self.detail.format(uu, self.page)
         #     yield scrapy.Request(url, callback=self.parse_detail)
+
+#https://resource-insight.newrank.cn/insight/android/2019/07/03/262bcfa9f5916f8abad0ace22d2cfda3.jpg?width=1080&height=2338
