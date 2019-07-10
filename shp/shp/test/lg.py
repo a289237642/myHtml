@@ -46,7 +46,8 @@ class SpInfoSpider(scrapy.Spider):
 
                 # 内容
                 if 'content' in mfriend['message']['message_text'].keys():
-                    item['content'] = mfriend['message']['message_text']['content'].replace('\n', "")
+                    item['content'] = json.dumps(
+                        mfriend['message']['message_text']['content'].replace("\n", "").strip(), ensure_ascii=False)
                 else:
                     item['content'] = ""
 
@@ -76,85 +77,69 @@ class SpInfoSpider(scrapy.Spider):
 
                 # 分享的链接的封面图
                 # if mfriend['message']['link'] is None:
-                if 'link' not in mfriend['message'].keys():
-                    item['pic'] = ""
-                else:
-                    if mfriend['message']['link'] is None:
-                        item['pic'] = ""
-                    elif 'pic' not in mfriend['message']['link'].keys():
-                        item['pic'] = ""
-                    else:
-                        item['pic'] = mfriend['message']['link']['pic']
+                #     item['pic'] = ""
+                # item['ftitle'] = ""
+                # item['url'] = ""
+                # if 'link' not in mfriend['message'].keys():
+                #     item['pic'] = ""
+                # else:
+                #     if mfriend['message']['link'] is None:
+                #         item['pic'] = ""
+                #     elif 'pic' not in mfriend['message']['link'].keys():
+                #         item['pic'] = ""
+                #     else:
+                #         item['pic'] = mfriend['message']['link']['pic']
+                #         print(item['pic'])
 
                 # 标题
                 # if mfriend['message']['link'] is None:
-                if 'link' not in mfriend['message'].keys():
-                    item['ftitle'] = ""
-                elif mfriend['message']['link'] is None:
-                    item['ftitle'] = ""
-                elif 'title' not in mfriend['message']['link'].keys():
-                    item['ftitle'] = ""
-                else:
-                    item['ftitle'] = mfriend['message']['link']['title']
+                # item['pic'] = ""
+                # item['ftitle'] = ""
+                # item['url'] = ""
+                # if 'link' not in mfriend['message'].keys():
+                #     item['ftitle'] = ""
+                # else:
+                #     if mfriend['message']['link'] is None:
+                #         item['ftitle'] = ""
+                #     elif 'title' not in mfriend['message']['link'].keys():
+                #         item['ftitle'] = ""
+                #     else:
+                #         # print("====>>>",mfriend['message']['link']['title'])
+                #         item['ftitle'] = mfriend['message']['link']['title']
 
                 # 分享的链接或者图片的地址
                 # if mfriend['message']['link'] is None:
-                if 'link' not in mfriend['message'].keys():
-                    item['url'] = ""
-                    item['img_url'] = ""
-                    item['link_url'] = ""
-                elif mfriend['message']['link'] is None:
-                    item['url'] = ""
-                    item['img_url'] = ""
-                    item['link_url'] = ""
-                elif 'url' not in mfriend['message']['link'].keys():
-                    item['url'] = ""
-                    item['img_url'] = ""
-                    item['link_url'] = ""
-                else:
-                    url = mfriend['message']['link']['url']
-                    if ".jpg" in url or ".png" in url:
-                        item['img_url'] = url
-                        item['link_url'] = ""
-                    else:
-                        item['img_url'] = ""
-                        item['link_url'] = url
-                    item['url'] = url
+                #     # item['pic'] = ""
+                #     # item['ftitle'] = ""
+                #     item['url'] = ""
+                # if 'link' not in mfriend['message'].keys():
+                #     item['url'] = ""
+                #     item['img_url'] = ""
+                #     item['link_url'] = ""
+                # else:
+                #     if mfriend['message']['link'] is None:
+                #         item['url'] = ""
+                #         item['img_url'] = ""
+                #         item['link_url'] = ""
+                #     elif 'url' not in mfriend['message']['link'].keys():
+                #         item['url'] = ""
+                #         item['img_url'] = ""
+                #         item['link_url'] = ""
+                #     else:
+                #         url = mfriend['message']['link']['url']
+                #         if ".jpg" in url or ".png" in url:
+                #             item['img_url'] = url
+                #             item['link_url'] = ""
+                #         else:
+                #             item['img_url'] = ""
+                #             item['link_url'] = url
+                #         item['url'] = url
 
-                print(item)
-                # yield item
+                    # print(item)
+                    yield item
         else:
             return
 
         self.page += 1
         url = self.detail.format(uu, self.page)
         yield scrapy.Request(url, callback=self.parse_detail)
-
-# uu = self.handlesUrl(response.url)
-#
-# python_dict = json.loads(response.text)
-# myFriend = python_dict['data']['messages']
-# if len(myFriend) > 0:
-#     for mfriend in myFriend:
-#         item = ShpItem()
-#
-#         # 人物activity_uuid
-#         item['activity_uuid'] = uu
-#
-#         # 信息的message_uuid
-#         item['message_uuid'] = mfriend['message_uuid']
-#
-#         # 评论数
-#         if 'comment_count' in mfriend['message']['message_text'].keys():
-#             item['comment_count'] = mfriend['message']['message_text']['comment_count']
-#         else:
-#             item['comment_count'] = 0
-#
-#         # print(item)
-#         yield item
-# else:
-#     return
-#
-# self.page += 1
-# url = self.detail.format(uu, self.page)
-# yield scrapy.Request(url, callback=self.parse_detail)

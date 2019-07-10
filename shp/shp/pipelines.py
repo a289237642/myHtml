@@ -25,9 +25,11 @@ class ShpPipeline(object):
 
         try:
             self.cursor.execute(
-                "insert into pl(content,ctime,head_image_url,message_uuid,name)"
-                " values(%s,%s,%s,%s,%s)",
-                [item['content'], item['ctime'], item['head_image_url'], item['message_uuid'], item['name']])
+                "insert into dt(activity_uuid,add_time,comment_count,content,forward_count,ftitle,message_uuid,pic,thumb_count,url,img_url,link_url)"
+                " values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
+                [item['activity_uuid'], item['add_time'], item['comment_count'], item['content'], item['forward_count'],
+                 item['ftitle'], item['message_uuid'], item['pic'], item['thumb_count'], item['url'], item['img_url'],
+                 item['link_url']])
             self.connect.commit()
         except Exception as error:
             print(error)
@@ -65,6 +67,11 @@ self.cursor.execute(
                  item['web_name'], item['tags'], item['unique_timestamp'], item['create_time'], item['is_original'],
                  datetime.now()]) 
                  
-                
+ 
+ 
+self.cursor.execute(
+                "insert into pl(content,ctime,head_image_url,message_uuid,name)"
+                " values(%s,%s,%s,%s,%s)",
+                [item['content'], item['ctime'], item['head_image_url'], item['message_uuid'], item['name']])               
 
 """

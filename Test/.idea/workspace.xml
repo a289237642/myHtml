@@ -2,21 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5326d7c2-903e-47b8-b7b2-cf7e48e05917" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../shp/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../shp/shp/test/lg.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/spiders/U1" beforeDir="false" afterPath="$PROJECT_DIR$/demo/U1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/spiders/U2" beforeDir="false" afterPath="$PROJECT_DIR$/demo/U2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/spiders/baidu.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/spiders/baidu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/spiders/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/spiders/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/Untitled-1" beforeDir="false" afterPath="$PROJECT_DIR$/demo/Untitled-1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/huxiu.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shp/.idea/dataSources/e9c5316d-2226-4b13-bd04-2f755bb30fb9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../shp/.idea/dataSources/e9c5316d-2226-4b13-bd04-2f755bb30fb9.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../shp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../shp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shp/shp/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/../shp/shp/items.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../shp/shp/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/../shp/shp/pipelines.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../shp/shp/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../shp/shp/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../shp/shp/spiders/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../shp/shp/spiders/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../shp/shp/spiders/sp_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/../shp/shp/spiders/sp_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../shp/shp/test/sp_comment.py" beforeDir="false" afterPath="$PROJECT_DIR$/../shp/shp/test/sp_comment.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../shp/shp/test/sp_friend.py" beforeDir="false" afterPath="$PROJECT_DIR$/../shp/shp/test/sp_friend.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wbspider/newmini" beforeDir="false" afterPath="$PROJECT_DIR$/../wbspider/newmini" afterDir="false" />
     </list>
@@ -45,35 +39,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Test/spiders/baidu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="133" column="49" selection-start-line="133" selection-start-column="49" selection-end-line="133" selection-end-column="49" />
+            <state relative-caret-position="-832">
+              <caret line="58" column="28" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
               <folding>
                 <element signature="e#24#43#0" expanded="true" />
-                <element signature="e#720#1642#0" />
-                <element signature="e#1618#1725#0" />
-                <element signature="e#6107#6140#0" />
+                <element signature="e#766#1604#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/demo/2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="604">
-              <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="61" />
-              <folding>
-                <element signature="e#54#65#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Test/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-941">
-              <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -82,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/Test/spiders/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -117,11 +88,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1280" />
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1057" />
+    <option name="width" value="1280" />
+    <option name="height" value="732" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -136,11 +106,6 @@
             <path>
               <item name="Test" type="b2602c69:ProjectViewProjectNode" />
               <item name="Test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Test" type="b2602c69:ProjectViewProjectNode" />
@@ -303,24 +268,26 @@
       <workItem from="1562234211876" duration="8253000" />
       <workItem from="1562320955632" duration="2254000" />
       <workItem from="1562376378953" duration="2771000" />
-      <workItem from="1562549453318" duration="1476000" />
+      <workItem from="1562549453318" duration="5480000" />
+      <workItem from="1562582580320" duration="552000" />
+      <workItem from="1562590437476" duration="2222000" />
+      <workItem from="1562731946910" duration="644000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25696000" />
+    <option name="totallyTimeSpent" value="33118000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="23" width="1920" height="1057" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1280" height="732" extended-state="1" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.104898825" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18901454" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Storybook" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23460722" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23460722" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -328,7 +295,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.30116472" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.33225283" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -407,16 +374,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Test/middlewares.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -427,23 +384,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test/spiders/main.py">
+    <entry file="file://$PROJECT_DIR$/Test/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="1190">
+          <caret line="70" selection-start-line="70" selection-end-line="71" selection-end-column="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test/settings.py">
+    <entry file="file://$PROJECT_DIR$/demo/1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-941">
-          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="3" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/demo/2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
+        <state relative-caret-position="331">
           <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="61" />
           <folding>
             <element signature="e#54#65#0" expanded="true" />
@@ -451,15 +408,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Test/spiders/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Test/spiders/baidu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="133" column="49" selection-start-line="133" selection-start-column="49" selection-end-line="133" selection-end-column="49" />
+        <state relative-caret-position="-832">
+          <caret line="58" column="28" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
           <folding>
             <element signature="e#24#43#0" expanded="true" />
-            <element signature="e#720#1642#0" />
-            <element signature="e#1618#1725#0" />
-            <element signature="e#6107#6140#0" />
+            <element signature="e#766#1604#0" />
           </folding>
         </state>
       </provider>

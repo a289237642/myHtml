@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import json
-from selenium import webdriver
-from lxml import etree
+from datetime import datetime
 
 from shp.items import ShpItem, ShpUserItem, ShpCommentItem
 
@@ -10,7 +9,7 @@ from shp.items import ShpItem, ShpUserItem, ShpCommentItem
 class SpInfoSpider(scrapy.Spider):
     name = 'sp_info'
     allowed_domains = ['weseepro.com']
-    url = 'https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex={}&pageSize=20&type_uuid=289e724e0cf84800876588e2e4e3bf96'
+    url = 'https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex={}&pageSize=20&type_uuid=33333333333333333333333333333333'
     page = 1
     start_urls = [url.format(page)]
 
@@ -27,7 +26,7 @@ class SpInfoSpider(scrapy.Spider):
             return
         for mlist in myList:
             new_url = self.detail.format(mlist['activity_uuid'], self.page)
-            yield scrapy.Request(new_url, callback=self.parse_detail, )
+            yield scrapy.Request(new_url, callback=self.parse_detail)
 
         self.page += 1
         url = self.url.format(self.page)
@@ -38,24 +37,30 @@ class SpInfoSpider(scrapy.Spider):
 
         python_dict = json.loads(response.text)
         myFriend = python_dict['data']['messages']
-        if len(myFriend) == 0:
-            return
-        else:
-            for i in myFriend:
-                if i['message'] is None:
-                    return
+        if len(myFriend) > 0:
+            for mfriend in myFriend:
+                muuid = mfriend['message_uuid']
+                pls = mfriend['follow_messages']
+                if len(pls) > 0:
+                    for pl in pls:
+                        item = ShpCommentItem()
+                        # 评论人的名字
+                        item['name'] = pl['account']['name']
+                        # 评论人的头像头像
+                        item['head_image_url'] = pl['account']['head_image_url']
+                        # 评论的内容
+                        item['content'] = pl['message_text']['content']
+                        # 评论图片
+                        # item['comment_img'] = pl['message_text']['comment_img']
+                        # 信息的ID
+                        item['message_uuid'] = muuid
+                        # 评论时间
+                        item['ctime'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        yield item
                 else:
-                    if len(i['follow_messages']) != 0:
-                        comments = i['follow_messages']
-                        for comment in comments:
-                            item = ShpCommentItem()
-                            item['fcontent'] = i['message']['message_text']['content'].replace('\n', "")
-                            item['name'] = comment['account']['name']
-                            item['head_image_url'] = comment['account']['head_image_url']
-                            item['content'] = comment['message_text']['content']
-                            item['comment_img'] = comment['message_text']['comment_img']
-                            # print(item)
-                            yield item
+                    pass
+        else:
+            return
         self.page += 1
         url = self.detail.format(uu, self.page)
         yield scrapy.Request(url, callback=self.parse_detail)

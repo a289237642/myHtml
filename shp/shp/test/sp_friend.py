@@ -7,7 +7,7 @@ from shp.items import ShpItem, ShpUserItem
 class SpInfoSpider(scrapy.Spider):
     name = 'sp_info'
     allowed_domains = ['weseepro.com']
-    url = 'https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex={}&pageSize=20&type_uuid=22222222222222222222222222222222'
+    url = 'https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex={}&pageSize=20&type_uuid=33333333333333333333333333333333'
     page = 1
     start_urls = [url.format(page)]
 
@@ -46,8 +46,7 @@ class SpInfoSpider(scrapy.Spider):
 
                 # 内容
                 if 'content' in mfriend['message']['message_text'].keys():
-                    item['content'] = mfriend['message']['message_text']['content'].replace('\n', "").replace(
-                        "\u200b\u200b\u200b", "")
+                    item['content'] = mfriend['message']['message_text']['content'].replace('\n', "")
                 else:
                     item['content'] = ""
 

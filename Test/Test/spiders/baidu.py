@@ -48,7 +48,6 @@ class BaiduSpider(scrapy.Spider):
                 'endpoint': 'execute',
             }
         })
-        t_url = 'http://fanyi.youdao.com/translate?smartresult=dict&smartresult=rule'
 
     def handles_fy(self,soure_time):
         # 打开有道在线翻译，输入girl，检查，找到headers,复制里面的网址
@@ -134,9 +133,6 @@ class BaiduSpider(scrapy.Spider):
             soure_time=self.handles_fy(soure_time)
         else:
             soure_time = ""
-
-
-
 
         spider_time = time.time()
         date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(spider_time))
