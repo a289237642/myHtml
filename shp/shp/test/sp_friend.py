@@ -7,7 +7,7 @@ from shp.items import ShpItem, ShpUserItem
 class SpInfoSpider(scrapy.Spider):
     name = 'sp_info'
     allowed_domains = ['weseepro.com']
-    url = 'https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex={}&pageSize=20&type_uuid=33333333333333333333333333333333'
+    url = 'https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex={}&pageSize=20&type_uuid=88888888888888888888888888888888'
     page = 1
     start_urls = [url.format(page)]
 
@@ -75,10 +75,10 @@ class SpInfoSpider(scrapy.Spider):
                     item['comment_count'] = 0
 
                 # 分享的链接的封面图
-                if mfriend['message']['link'] is None:
+                if 'link' not in mfriend['message'].keys():
                     item['pic'] = ""
                 else:
-                    if 'link' not in mfriend['message'].keys():
+                    if mfriend['message']['link'] is None:
                         item['pic'] = ""
                     elif 'pic' not in mfriend['message']['link'].keys():
                         item['pic'] = ""
@@ -86,9 +86,9 @@ class SpInfoSpider(scrapy.Spider):
                         item['pic'] = mfriend['message']['link']['pic']
 
                 # 标题
-                if mfriend['message']['link'] is None:
+                if 'link' not in mfriend['message'].keys():
                     item['ftitle'] = ""
-                elif 'link' not in mfriend['message'].keys():
+                elif mfriend['message']['link'] is None:
                     item['ftitle'] = ""
                 elif 'title' not in mfriend['message']['link'].keys():
                     item['ftitle'] = ""
@@ -96,12 +96,18 @@ class SpInfoSpider(scrapy.Spider):
                     item['ftitle'] = mfriend['message']['link']['title']
 
                 # 分享的链接或者图片的地址
-                if mfriend['message']['link'] is None:
+                if 'link' not in mfriend['message'].keys():
                     item['url'] = ""
-                elif 'link' not in mfriend['message'].keys():
+                    item['img_url'] = ""
+                    item['link_url'] = ""
+                elif mfriend['message']['link'] is None:
                     item['url'] = ""
+                    item['img_url'] = ""
+                    item['link_url'] = ""
                 elif 'url' not in mfriend['message']['link'].keys():
                     item['url'] = ""
+                    item['img_url'] = ""
+                    item['link_url'] = ""
                 else:
                     url = mfriend['message']['link']['url']
                     if ".jpg" in url or ".png" in url:

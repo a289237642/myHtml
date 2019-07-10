@@ -7,7 +7,7 @@ from shp.items import ShpItem, ShpUserItem
 class SpInfoSpider(scrapy.Spider):
     name = 'sp_info'
     allowed_domains = ['weseepro.com']
-    url = 'https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex={}&pageSize=20&type_uuid=33333333333333333333333333333333'
+    url = 'https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex={}&pageSize=20&type_uuid=88888888888888888888888888888888'
     page = 1
     start_urls = [url.format(page)]
 
@@ -75,7 +75,6 @@ class SpInfoSpider(scrapy.Spider):
                     item['comment_count'] = 0
 
                 # 分享的链接的封面图
-                # if mfriend['message']['link'] is None:
                 if 'link' not in mfriend['message'].keys():
                     item['pic'] = ""
                 else:
@@ -87,7 +86,6 @@ class SpInfoSpider(scrapy.Spider):
                         item['pic'] = mfriend['message']['link']['pic']
 
                 # 标题
-                # if mfriend['message']['link'] is None:
                 if 'link' not in mfriend['message'].keys():
                     item['ftitle'] = ""
                 elif mfriend['message']['link'] is None:
@@ -98,7 +96,6 @@ class SpInfoSpider(scrapy.Spider):
                     item['ftitle'] = mfriend['message']['link']['title']
 
                 # 分享的链接或者图片的地址
-                # if mfriend['message']['link'] is None:
                 if 'link' not in mfriend['message'].keys():
                     item['url'] = ""
                     item['img_url'] = ""
@@ -121,40 +118,11 @@ class SpInfoSpider(scrapy.Spider):
                         item['link_url'] = url
                     item['url'] = url
 
-                print(item)
-                # yield item
+                # print(item)
+                yield item
         else:
             return
 
         self.page += 1
         url = self.detail.format(uu, self.page)
         yield scrapy.Request(url, callback=self.parse_detail)
-
-# uu = self.handlesUrl(response.url)
-#
-# python_dict = json.loads(response.text)
-# myFriend = python_dict['data']['messages']
-# if len(myFriend) > 0:
-#     for mfriend in myFriend:
-#         item = ShpItem()
-#
-#         # 人物activity_uuid
-#         item['activity_uuid'] = uu
-#
-#         # 信息的message_uuid
-#         item['message_uuid'] = mfriend['message_uuid']
-#
-#         # 评论数
-#         if 'comment_count' in mfriend['message']['message_text'].keys():
-#             item['comment_count'] = mfriend['message']['message_text']['comment_count']
-#         else:
-#             item['comment_count'] = 0
-#
-#         # print(item)
-#         yield item
-# else:
-#     return
-#
-# self.page += 1
-# url = self.detail.format(uu, self.page)
-# yield scrapy.Request(url, callback=self.parse_detail)

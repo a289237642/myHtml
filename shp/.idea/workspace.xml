@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0af8afac-0607-4091-8255-d2231c606759" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/shp/test/lg.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Test/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Test/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Test/Test/spiders/baidu.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Test/Test/spiders/baidu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e9c5316d-2226-4b13-bd04-2f755bb30fb9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e9c5316d-2226-4b13-bd04-2f755bb30fb9.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shp/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/shp/pipelines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shp/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/shp/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shp/spiders/sp_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/shp/spiders/sp_info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shp/test/sp_comment.py" beforeDir="false" afterPath="$PROJECT_DIR$/shp/test/sp_comment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shp/test/sp_friend.py" beforeDir="false" afterPath="$PROJECT_DIR$/shp/test/sp_friend.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wbspider/newmini" beforeDir="false" afterPath="$PROJECT_DIR$/../wbspider/newmini" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,8 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shp/spiders/sp_info.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="124" column="26" lean-forward="true" selection-start-line="124" selection-start-column="26" selection-end-line="124" selection-end-column="26" />
+            <state relative-caret-position="-67">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
                 <element signature="e#493#532#0" />
@@ -90,7 +82,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shp/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="107">
@@ -102,11 +94,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e9c5316d-2226-4b13-bd04-2f755bb30fb9/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="129" selection-start-line="129" selection-end-line="129" selection-end-column="31" />
+            <state relative-caret-position="156">
+              <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
               <folding>
                 <element signature="e#2#3309#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="das://e9c5316d-2226-4b13-bd04-2f755bb30fb9/schema/zj_live/table/aritcle_info">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state projectRestartId="dae1bf24-6534-4b08-a98e-8993ca099897">
+              <filtering>
+                <filter text="" />
+              </filtering>
             </state>
           </provider>
         </entry>
@@ -145,8 +148,8 @@
         <entry file="file://$PROJECT_DIR$/file.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="152">
-                <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="112" />
+              <first_editor relative-caret-position="51">
+                <caret line="3" column="129" selection-start-line="3" selection-start-column="97" selection-end-line="3" selection-end-column="129" />
               </first_editor>
               <second_editor />
             </state>
@@ -196,9 +199,9 @@
         <option value="$PROJECT_DIR$/shp/test/sp_comment.py" />
         <option value="$PROJECT_DIR$/shp/spiders/99.py" />
         <option value="$PROJECT_DIR$/shp/pipelines.py" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e9c5316d-2226-4b13-bd04-2f755bb30fb9/console.sql" />
-        <option value="$PROJECT_DIR$/shp/spiders/sp_info.py" />
         <option value="$PROJECT_DIR$/shp/settings.py" />
+        <option value="$PROJECT_DIR$/shp/spiders/sp_info.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e9c5316d-2226-4b13-bd04-2f755bb30fb9/console.sql" />
       </list>
     </option>
   </component>
@@ -242,7 +245,7 @@
     <property name="DatabaseDriversLRU" value="sqlserver&#10;mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="database.console.LAST_STATE" value="false" />
+    <property name="database.console.LAST_STATE" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -419,12 +422,12 @@
       <workItem from="1562549452508" duration="5397000" />
       <workItem from="1562582580033" duration="825000" />
       <workItem from="1562641146395" duration="30369000" />
-      <workItem from="1562676227788" duration="23331000" />
+      <workItem from="1562676227788" duration="26059000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187215000" />
+    <option name="totallyTimeSpent" value="189943000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -437,14 +440,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17609046" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.17609046" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Storybook" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.7416918" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919224" weight="0.5241692" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -453,9 +457,9 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3280255" />
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.32779455" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32252836" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50080776" side_tool="true" weight="0.326284" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50080776" side_tool="true" weight="0.5241692" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49919224" weight="0.326284" />
-      <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.49919224" weight="0.4063444" />
+      <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.49919224" visible="true" weight="0.4063444" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -463,7 +467,7 @@
       <window_info anchor="right" id="SciView" order="4" />
       <window_info anchor="right" id="Redis Servers" order="5" />
       <window_info anchor="right" id="Mongo Explorer" order="6" />
-      <window_info anchor="right" id="Database" order="7" weight="0.16882068" />
+      <window_info active="true" anchor="right" id="Database" order="7" visible="true" weight="0.16882068" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17225201" />
@@ -497,7 +501,7 @@
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/shp$main.coverage" NAME="main Coverage Results" MODIFIED="1562748277997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/shp/spiders" />
+    <SUITE FILE_PATH="coverage/shp$main.coverage" NAME="main Coverage Results" MODIFIED="1562748620304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/shp/spiders" />
     <SUITE FILE_PATH="coverage/shp$sql.coverage" NAME="sql Coverage Results" MODIFIED="1562728113021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/shp/test" />
   </component>
   <component name="editorHistoryManager">
@@ -516,15 +520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://e9c5316d-2226-4b13-bd04-2f755bb30fb9/schema/zj_live/table/aritcle_info">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="853de76a-b646-4558-a1a4-19f747a47905">
-          <filtering>
-            <filter text="" />
-          </filtering>
         </state>
       </provider>
     </entry>
@@ -572,15 +567,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://e9c5316d-2226-4b13-bd04-2f755bb30fb9/schema/zj_live/table/dt">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="59ac13a4-600a-4438-bba1-73128767db01">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shp/test/1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
@@ -618,15 +604,6 @@
       </provider>
     </entry>
     <entry file="das://e9c5316d-2226-4b13-bd04-2f755bb30fb9/schema/zj_live/table/user_base">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="dae1bf24-6534-4b08-a98e-8993ca099897">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://e9c5316d-2226-4b13-bd04-2f755bb30fb9/schema/zj_live/table/dl">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="dae1bf24-6534-4b08-a98e-8993ca099897">
           <filtering>
@@ -724,36 +701,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/file.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="152">
-            <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="112" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e9c5316d-2226-4b13-bd04-2f755bb30fb9/console.sql">
+    <entry file="file://$PROJECT_DIR$/shp/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="129" selection-start-line="129" selection-end-line="129" selection-end-column="31" />
-          <folding>
-            <element signature="e#2#3309#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shp/spiders/sp_info.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="124" column="26" lean-forward="true" selection-start-line="124" selection-start-column="26" selection-end-line="124" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#493#532#0" />
-            <element signature="e#573#1021#0" />
-            <element signature="e#1069#1105#0" />
-          </folding>
+        <state relative-caret-position="107">
+          <caret line="29" column="18" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -767,10 +718,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shp/settings.py">
+    <entry file="das://e9c5316d-2226-4b13-bd04-2f755bb30fb9/schema/zj_live/table/dt">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="dae1bf24-6534-4b08-a98e-8993ca099897">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/file.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="51">
+            <caret line="3" column="129" selection-start-line="3" selection-start-column="97" selection-end-line="3" selection-end-column="129" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shp/spiders/sp_info.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="29" column="18" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+        <state relative-caret-position="-67">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#493#532#0" />
+            <element signature="e#573#1021#0" />
+            <element signature="e#1069#1105#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e9c5316d-2226-4b13-bd04-2f755bb30fb9/schema/zj_live/table/dl">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="dae1bf24-6534-4b08-a98e-8993ca099897">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e9c5316d-2226-4b13-bd04-2f755bb30fb9/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
+          <folding>
+            <element signature="e#2#3309#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://e9c5316d-2226-4b13-bd04-2f755bb30fb9/schema/zj_live/table/aritcle_info">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="dae1bf24-6534-4b08-a98e-8993ca099897">
+          <filtering>
+            <filter text="" />
+          </filtering>
         </state>
       </provider>
     </entry>
