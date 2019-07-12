@@ -37,7 +37,7 @@ class ShpItem(scrapy.Item):
 
     # 微信链接
     title = scrapy.Field()  # 标题
-    soure_time = scrapy.Field()  # 原文时间  需要进行转换 2019-07-02 15：05
+    source_time = scrapy.Field()  # 原文时间  需要进行转换 2019-07-02 15：05
     author = scrapy.Field()  # 作者
     article = scrapy.Field()  # 文章正文  [{text:""}, {img:""}, {text:""}]
     tags = scrapy.Field()  # 文章分类标签  ['创投']
@@ -47,6 +47,7 @@ class ShpItem(scrapy.Item):
     source_url = scrapy.Field()  # 详情页的url
     is_original = scrapy.Field()  # 是否原创
     web_name = scrapy.Field()
+
 
 
 class ShpUserItem(scrapy.Item):

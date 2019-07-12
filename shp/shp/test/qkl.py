@@ -7,7 +7,7 @@ from shp.items import ShpItem, ShpUserItem
 class SpInfoSpider(scrapy.Spider):
     name = 'sp_info'
     allowed_domains = ['weseepro.com']
-    url = 'https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex={}&pageSize=20&type_uuid=88888888888888888888888888888888'
+    url = 'https://www.weseepro.com/api/v1/activity/activities/for/pro?pageIndex={}&pageSize=20&type_uuid=289e724e0cf84800876588e2e4e3bf96'
     page = 1
     start_urls = [url.format(page)]
 

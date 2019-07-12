@@ -25,11 +25,10 @@ class ShpPipeline(object):
 
         try:
             self.cursor.execute(
-                "insert into dt(activity_uuid,add_time,comment_count,content,forward_count,ftitle,message_uuid,pic,thumb_count,url,img_url,link_url)"
-                " values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
-                [item['activity_uuid'], item['add_time'], item['comment_count'], item['content'], item['forward_count'],
-                 item['ftitle'], item['message_uuid'], item['pic'], item['thumb_count'], item['url'], item['img_url'],
-                 item['link_url']])
+                "insert into wx(title,author,unique_timestamp,is_original,article,source_time,source_url,message_uuid)"
+                " values(%s,%s,%s,%s,%s,%s,%s,%s)",
+                [item['title'], item['author'], item['unique_timestamp'], item['is_original'], item['article'],
+                 item['source_time'], item['source_url'], item['message_uuid']])
             self.connect.commit()
         except Exception as error:
             print(error)
